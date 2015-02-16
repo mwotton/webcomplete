@@ -14,18 +14,22 @@ category:            Web
 build-type:          Simple
 -- extra-source-files:
 cabal-version:       >=1.10
-data-files: /usr/share/dict/words
 
 executable webcomplete
   main-is: webcomplete.hs
   -- other-modules:
   -- other-extensions:
 
+--   ghc-options: -threaded -rtsopts
   build-depends:       base >=4.7 && <4.8,
                        fastedit,
                        wai-cors,
                        scotty,
-                       bytestring
+                       file-embed,
+                       bytestring,
+                       text,
+                       transformers
+
 
   -- hs-source-dirs:
   default-language:    Haskell2010
